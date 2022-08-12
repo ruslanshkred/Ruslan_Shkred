@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    
+<h3>Проверка пароля</h3>
+<form action="" method="post" name="check">
+    <fieldset>
+        <input type="text" id="password">* Пароль<br>
+        <input type="text" id="control">* Повторить пароль<br><br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function($) {
+        
+        $('#password').keypress(function(e) {
+            $('#password, #control').css('backgroundColor', 'green')
+        });
+
+
+        $('#control').keyup(function(e) {
+            var value1 = $('#password').val();
+            var value2 = $('#control').val();
+            if (value2 != value1 && value2 !=0) {
+                $('#password, #control').css('backgroundColor', 'red ');
+            } else {
+                $('#password, #control').css('backgroundColor', 'green ');
+            };
+        });
+    })
+    
+</script>
+
+</body>
+</html>
